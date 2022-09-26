@@ -30,23 +30,22 @@ int main() {
         for (int j = 0; j < num_special_simb; ++j) { std::cin >> spec_simb[j]; }
 
 
-        int result = -1;
-        bool flag = true;
+        int result = 0;
+        int last = 0;
 
-        while (flag) {
-            flag = false;
-            result += 1;
-            for (int j = 0; j < word.size(); ++j) {
-                if (in(word[j + 1], spec_simb)) {
-                    word.replace(j, 1, "@");
-                    flag = true;
+
+
+            for (int j = 0; j < len_word; ++j) {
+                if (in(word[j], spec_simb)) {
+                    if (result < j - last){result = j - last;}
+                    last = j;
 
                 }
 
 
             }
-            word.erase(std::remove(word.begin(), word.end(), '@'), word.end());
-        }
+
+
         std::cout << result << std::endl;
 
 
