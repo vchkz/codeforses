@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-#include <algorithm>
 
 int main(){
     int a;
@@ -15,17 +14,26 @@ int main(){
         std::string str;
         std::cin >> str;
 
-        int res = 10000000;
+        int count = 0;
 
-
-
-        for (int i = 0; i < str.size() - len + 1; ++i) {
-            int count = 0;
-            for (int j = i; j < i + len; ++j) {
-                if (str[j] == 'W'){count++;}
+        for (int i = 0; i < len; ++i) {
+            if (str[i] == 'W'){
+                count++;
             }
-            if (res > count){res = count;}
         }
-        std::cout << res << std::endl;
+        int res = 0;
+        res = count;
+
+        for (int i = len; i < n; ++i) {
+            if (str[i] == 'W'){
+                res++;
+            }
+            if (str[i-len] == 'W'){
+                res--;
+            }
+            if (count > res){count = res;}
+
+        }
+        std::cout << count << std::endl;
     }
 }
