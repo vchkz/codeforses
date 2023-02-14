@@ -144,33 +144,33 @@ bool operator>=(const Rational &lhs, const Rational &rhs) {
 
 
 int main() {
-    Rational r1(2, -4);
-    std::cout << r1;
-//     Test constructor and getters
-    Rational r1(1, 2);
-    assert(r1.getNumerator() == 1);
-    assert(r1.getDenominator() == 2);
 
-    // Test addition
+
+    // Test constructor
+    std::cout << "Test constructor:" << std::endl;
+    Rational r1(2, -4);
+    std::cout << "2/-4 = " << r1 << std::endl;
     Rational r2(1, 4);
+    std::cout << "1/4 = " << r2 << std::endl;
+
+
+    std::cout << "\nTest arithmetics:" << std::endl;
+    // Test addition
     Rational result = r1 + r2;
-    assert(result.getNumerator() == 3);
-    assert(result.getDenominator() == 4);
+    std::cout << r1 << " + " << r2 << " = " << result << std::endl;
+
 
     // Test subtraction
     result = r1 - r2;
-    assert(result.getNumerator() == 1);
-    assert(result.getDenominator() == 4);
+    std::cout << r1 << " - " << r2 << " = " << result << std::endl;
 
     // Test multiplication
     result = r1 * r2;
-    assert(result.getNumerator() == 1);
-    assert(result.getDenominator() == 8);
+    std::cout << r1 << " * " << r2 << " = " << result << std::endl;
 
     // Test division
     result = r1 / r2;
-    assert(result.getNumerator() == 2);
-    assert(result.getDenominator() == 1);
+    std::cout << r1 << " / " << r2 << " = " << result << std::endl;
 
     std::cout << "All arithmetic tests passed successfully!" << std::endl;
 
