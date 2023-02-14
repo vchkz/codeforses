@@ -172,6 +172,11 @@ int main() {
     result = r1 / r2;
     std::cout << r1 << " / " << r2 << " = " << result << std::endl;
 
+    // Test input
+    std::cout << "\nTest input" << std::endl;
+    std::cin >> result;
+    std::cout << result << std::endl;
+
 
     return 0;
 }
