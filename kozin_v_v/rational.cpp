@@ -172,7 +172,6 @@ int main() {
     result = r1 / r2;
     std::cout << r1 << " / " << r2 << " = " << result << std::endl;
 
-    std::cout << "All arithmetic tests passed successfully!" << std::endl;
 
     return 0;
 }
