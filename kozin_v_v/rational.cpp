@@ -20,7 +20,7 @@ public:
             denum_ *= -1;
         }
 
-        /// gcd
+        /// сокращение дроби
         int greater;
 
         int gcd;
